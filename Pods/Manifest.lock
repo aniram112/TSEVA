@@ -1,0 +1,23 @@
+PODS:
+  - ChromaColorPicker (1.7.2)
+
+DEPENDENCIES:
+  - ChromaColorPicker (from `https://github.com/valerianb/ChromaColorPicker.git`, commit `d358791c7f593d6ea7d6f8c2cac2cf8fae582bc1`, branch `master`)
+
+EXTERNAL SOURCES:
+  ChromaColorPicker:
+    :branch: master
+    :commit: d358791c7f593d6ea7d6f8c2cac2cf8fae582bc1
+    :git: https://github.com/valerianb/ChromaColorPicker.git
+
+CHECKOUT OPTIONS:
+  ChromaColorPicker:
+    :commit: cd6d36c8570fed45eac85b31684dace016f6fbc2
+    :git: https://github.com/valerianb/ChromaColorPicker.git
+
+SPEC CHECKSUMS:
+  ChromaColorPicker: 080448e593d3e34a8cfadf360c4c04e639738c02
+
+PODFILE CHECKSUM: 65d62f0bccdd66fc0a2becf029a805fe6f4097a4
+
+COCOAPODS: 1.7.3
