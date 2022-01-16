@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  SuperColorPicker
+//  TSEVA
 //
-//  Created by Sonia Kucheryavaya on 02/07/2019.
-//  Copyright © 2019 Sonia Kucheryavaya. All rights reserved.
+//  Created by Marina Roshchupkina on 16.01.2022.
+//  Copyright © 2022 Marina Roshchupkina. All rights reserved.
 //
 
 import UIKit

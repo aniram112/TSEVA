@@ -10,6 +10,7 @@
 		10F8FA0CBC96C2DD51A2CAB2 /* Pods_SuperColorPickerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B953FFB60AA216B6DC4B96 /* Pods_SuperColorPickerTests.framework */; };
 		2BC73D1050E13E61459D9685 /* Pods_SuperColorPickerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDA5D12E63BEAEB7AB199EA /* Pods_SuperColorPickerUITests.framework */; };
 		4257B71001BF7210E6F283BC /* Pods_SuperColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AEB8E977A8E79FB8358FC6 /* Pods_SuperColorPicker.framework */; };
+		7E8D5F3327944F88000F18F2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8D5F3227944F88000F18F2 /* File.swift */; };
 		E30D536B22CB8ADF00C01242 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D536A22CB8ADF00C01242 /* AppDelegate.swift */; };
 		E30D536D22CB8ADF00C01242 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D536C22CB8ADF00C01242 /* ViewController.swift */; };
 		E30D537022CB8ADF00C01242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E30D536E22CB8ADF00C01242 /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		56C6B2C3235D4D72B6DA1F0C /* Pods-SuperColorPickerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPickerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPickerUITests/Pods-SuperColorPickerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		615B4A074B68783BF117F8F8 /* Pods-SuperColorPickerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPickerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPickerTests/Pods-SuperColorPickerTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DDA5D12E63BEAEB7AB199EA /* Pods_SuperColorPickerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperColorPickerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E8D5F3227944F88000F18F2 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		7F56FEDC8B6C02831E3DC820 /* Pods-SuperColorPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPicker/Pods-SuperColorPicker.release.xcconfig"; sourceTree = "<group>"; };
 		BC5B1E5393D38B1950EFB5C1 /* Pods-SuperColorPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPicker/Pods-SuperColorPicker.debug.xcconfig"; sourceTree = "<group>"; };
 		E30D536722CB8ADF00C01242 /* SuperColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				E30D537122CB8AE200C01242 /* Assets.xcassets */,
 				E30D537322CB8AE200C01242 /* LaunchScreen.storyboard */,
 				E30D537622CB8AE200C01242 /* Info.plist */,
+				7E8D5F3227944F88000F18F2 /* File.swift */,
 			);
 			path = SuperColorPicker;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 			files = (
 				E30D539922CB99F400C01242 /* Table.swift in Sources */,
 				E30D536D22CB8ADF00C01242 /* ViewController.swift in Sources */,
+				7E8D5F3327944F88000F18F2 /* File.swift in Sources */,
 				E30D539F22CCF7DD00C01242 /* UIColorEX.swift in Sources */,
 				E319A6C022CE158000D9B25C /* SingleTone.swift in Sources */,
 				E30D539B22CB9A1900C01242 /* Information.swift in Sources */,
