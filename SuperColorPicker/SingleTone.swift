@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 class App {
     private init() {}
     
     static var shared = App()
     
+    var imageColor = UIColor()
     var data = [String]()
 }
 

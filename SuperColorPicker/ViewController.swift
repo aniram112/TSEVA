@@ -10,17 +10,17 @@ import UIKit
 import Foundation
 import ChromaColorPicker
 
-class ViewController: UIViewController {
-   
-
-   //labels with colors
+class ViewController: UIViewController,UITextFieldDelegate {
+    
+    
+    //labels with colors
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
     @IBOutlet weak var label4: UILabel!
     @IBOutlet weak var label5: UILabel!
     @IBOutlet weak var label6: UILabel!
-   
+    
     //labels with text
     @IBOutlet weak var textLabel1: UILabel!
     @IBOutlet weak var textLabel2: UILabel!
@@ -35,45 +35,52 @@ class ViewController: UIViewController {
     var pickerData: [String] = ["ANALOGOUS","COMPLEMENTARY","TRIADIC", "TETRADIC", "NEUTRAL","SHADES","TINTS","TONES"]
     var colorpicker: ChromaColorPicker?
     
+    var textField = UITextField(frame: CGRect(x: UIScreen.main.bounds.width/2-150, y:47 , width: 300, height: 300))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         self.picker.dataSource = self
         self.picker.delegate = self
-       
+        
+        //ImagePickerManager().pickImage(self){ image in
+                //here is the image
+         //   }
+        
         /*
-        label1.backgroundColor = UIColor.green
-        label2.backgroundColor = UIColor.green
-        label3.backgroundColor = UIColor.green
-        */
+         label1.backgroundColor = UIColor.green
+         label2.backgroundColor = UIColor.green
+         label3.backgroundColor = UIColor.green
+         */
         
         //colorPicker собственной персоны
-        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: 50, y: 80, width: 270, height: 270))
+        let xcentre = UIScreen.main.bounds.width/2-150
+        let neatColorPicker = ChromaColorPicker(frame: CGRect(x: xcentre, y: 120, width: 300, height: 300))
         neatColorPicker.delegate = self as? ChromaColorPickerDelegate //ChromaColorPickerDelegate
         neatColorPicker.padding = -10
         neatColorPicker.stroke = 20
         neatColorPicker.hexLabel.textColor = UIColor.black
         neatColorPicker.addTarget(self, action: #selector(ViewController.colorChanged), for: .valueChanged)
-        view.addSubview(neatColorPicker)
         colorpicker = neatColorPicker
+        view.addSubview(colorpicker!)
+        
+        let tapAction = UITapGestureRecognizer(target: self, action:#selector(actionTapped(_:)))
+        colorpicker?.hexLabel.isUserInteractionEnabled = true
+        colorpicker?.hexLabel.addGestureRecognizer(tapAction)
+        
         //конец colorPicker
         
+        textField.textAlignment = .center
+        textField.delegate = self
+        textField.isHidden = true
+        textField.text = "#FF0000"
+        textField.font = UIFont(name: "Menlo-Regular", size: 20)
+        textField.textColor = .black
+        textField.addTarget(self, action: #selector(ViewController.textFieldDidEndEditing(_:)), for: .editingDidEnd)
+        view.addSubview(textField)
+        
     }
-//    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView!) -> UIView {
-//        
-//        var pickerLabel = view as? UILabel;
-//        
-//        if (pickerLabel == nil)
-//        {
-//            pickerLabel = UILabel()
-//            
-//            pickerLabel?.font = UIFont(name: "Menlo-Regular", size: 16)
-//            pickerLabel?.textAlignment = NSTextAlignment.center
-//        }
-//        
-//        pickerLabel?.text = pickerData[row]
-//        
-//        return pickerLabel!;
-//    }
+    
     func ChangeColorInLabels(){
         var strColor = colorpicker?.hexLabel.text
         var color1 = hexStringToUIColor(hex: strColor!)
@@ -216,17 +223,53 @@ class ViewController: UIViewController {
         ChangeColorInLabels()
     }
     
-   /*
-    @IBAction func press(_ sender: Any) {
-        print(colorpicker?.hexLabel.text)
+    @objc func actionTapped(_ sender: UITapGestureRecognizer) {
+        
+        colorpicker?.hexLabel.isHidden = true
+        colorpicker?.hexLabel.isEnabled = false
+        
+        textField.text = colorpicker?.hexLabel.text
+        textField.isHidden = false
+        textField.isEnabled = true
+        
+        let color = hexStringToUIColor(hex: (colorpicker?.hexLabel.text)!)
+        colorpicker?.adjustToColor(color)
+        ChangeColorInLabels()
+        // code here
     }
-    */
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            // User finished typing (hit return): hide the keyboard.
+            textField.resignFirstResponder()
+            return true
+        }
+    
+    @objc func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        textField.isHidden = true
+        colorpicker?.hexLabel.isEnabled = true
+        colorpicker?.hexLabel.isHidden = false
+        colorpicker?.hexLabel.text = textField.text
+        let color = hexStringToUIColor(hex: (colorpicker?.hexLabel.text)!)
+        colorpicker?.adjustToColor(color)
+        ChangeColorInLabels()
+        }
+    
+    /*
+     @IBAction func press(_ sender: Any) {
+     print(colorpicker?.hexLabel.text)
+     }
+     */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-  
-
-   
+    
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+        colorpicker?.adjustToColor(App.shared.imageColor)
+        //colorpicker?.hexLabel.text =
+        ChangeColorInLabels()
+    }
+    
 }
 
 
@@ -245,9 +288,9 @@ extension ViewController: UIPickerViewDataSource {
 
 extension ViewController : UIPickerViewDelegate {
     
-//    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
-//        return pickerData[row]
-//    }
+    //    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+    //        return pickerData[row]
+    //    }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel = view as? UILabel;
@@ -256,6 +299,7 @@ extension ViewController : UIPickerViewDelegate {
         {
             pickerLabel = UILabel()
             
+            pickerLabel?.textColor = .black
             pickerLabel?.font = UIFont(name: "Menlo-Regular", size: 16)
             pickerLabel?.textAlignment = NSTextAlignment.center
         }
@@ -266,19 +310,29 @@ extension ViewController : UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            ChangeColorInLabels()
+        ChangeColorInLabels()
         
-        }
+    }
 }
 
-    
+
 
 extension ViewController : ChromaColorPickerDelegate {
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
         App.shared.data.append(color.hexString) 
     }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
     
-    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 
