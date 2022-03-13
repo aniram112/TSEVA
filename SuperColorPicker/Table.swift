@@ -16,6 +16,7 @@ class Table: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = .white
         
     }
     
@@ -26,13 +27,16 @@ class Table: UIViewController {
 }
 extension Table : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return App.shared.data.count
+        return App.shared.paletteNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell", for: indexPath)
-        cell.backgroundColor = hexStringToUIColor(hex: App.shared.data[indexPath.row])
-        cell.textLabel?.text = App.shared.data[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "paletteCell", for: indexPath) as! paletteCell
+        cell.backgroundColor = .white
+        //cell.backgroundColor = hexStringToUIColor(hex: App.shared.data[indexPath.row])
+        //cell.textLabel?.text = App.shared.data[indexPath.row]
+        //cell.paletteTitle.text = App.shared.data[indexPath.row]
+        cell.paletteTitle.text = App.shared.paletteNames[indexPath.row]
         return cell
     }
     
@@ -41,7 +45,9 @@ extension Table: UITableViewDelegate {
     //функция для свайпа delete - хз, работает ли
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            App.shared.data.remove(at: indexPath.row)
+            //App.shared.data.remove(at: indexPath.row)
+            App.shared.palettes.removeValue(forKey: App.shared.paletteNames[indexPath.row])
+            App.shared.paletteNames.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             /* } else if editingStyle == .insert {
              */

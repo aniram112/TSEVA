@@ -15,6 +15,15 @@ class App {
     static var shared = App()
     
     var imageColor = UIColor()
+    //var paletteNames = [String]()
+    
+    var paletteNames = ["basic","pastel","dark"]
+    var palettes = ["basic": ["#0088CE"],
+                    "pastel": ["#D5FFCA","#CAFFDA","#FFFF9E"],
+                    "dark": ["#007500", "#A7002C"]]
+    
+    //var palettes = [[String]]()
+    //var palettes: [String: [String]] = [:]
     var data = [String]()
 }
 

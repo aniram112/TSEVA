@@ -319,6 +319,9 @@ extension ViewController : UIPickerViewDelegate {
 
 extension ViewController : ChromaColorPickerDelegate {
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
+        
+        // вот тут будет аларм
+        
         App.shared.data.append(color.hexString) 
     }
 }
