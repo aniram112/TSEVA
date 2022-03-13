@@ -16,7 +16,7 @@
 		7EE6792327DE733F00DC9BBB /* colorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6792227DE733F00DC9BBB /* colorCell.swift */; };
 		E30D536B22CB8ADF00C01242 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D536A22CB8ADF00C01242 /* AppDelegate.swift */; };
 		E30D536D22CB8ADF00C01242 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D536C22CB8ADF00C01242 /* ViewController.swift */; };
-		E30D537022CB8ADF00C01242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E30D536E22CB8ADF00C01242 /* Main.storyboard */; };
+		E30D537022CB8ADF00C01242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E30D536E22CB8ADF00C01242 /* Main.storyboard */; settings = {ASSET_TAGS = (1, ); }; };
 		E30D537222CB8AE200C01242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E30D537122CB8AE200C01242 /* Assets.xcassets */; };
 		E30D537522CB8AE200C01242 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E30D537322CB8AE200C01242 /* LaunchScreen.storyboard */; };
 		E30D538022CB8AE200C01242 /* SuperColorPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D537F22CB8AE200C01242 /* SuperColorPickerTests.swift */; };
@@ -255,6 +255,9 @@
 		E30D535F22CB8ADF00C01242 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Sonia Kucheryavaya";

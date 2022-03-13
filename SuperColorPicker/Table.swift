@@ -11,6 +11,20 @@ import UIKit
 class Table: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func addPaletteButton(_ sender: Any) {
+        
+        // вот тут будем вводить новое название
+        
+        let newPaletteName = "new palete"
+        if (App.shared.paletteNames.contains(newPaletteName)){
+            
+            App.shared.paletteNames.append(newPaletteName)
+            App.shared.palettes.updateValue([], forKey: newPaletteName)
+            self.tableView.reloadData()}
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -23,6 +37,7 @@ class Table: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
+    
     
 }
 extension Table : UITableViewDataSource {
