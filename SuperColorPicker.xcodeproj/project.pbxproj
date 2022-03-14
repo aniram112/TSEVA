@@ -128,6 +128,43 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7E5530E327DFE7D0002EBE63 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E30D536C22CB8ADF00C01242 /* ViewController.swift */,
+				E30D539822CB99F400C01242 /* Table.swift */,
+				7E87609A27DD025600A1BECF /* ImagePick.swift */,
+				E30D539A22CB9A1900C01242 /* Information.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7E5530E427DFE80F002EBE63 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E5530DF27DF9270002EBE63 /* CopyableLabel.swift */,
+				7EE6792227DE733F00DC9BBB /* colorCell.swift */,
+				7E87609C27DE3D9200A1BECF /* paletteCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7E5530E527DFE86A002EBE63 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E30D539E22CCF7DD00C01242 /* UIColorEX.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7E5530E627DFE8CC002EBE63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E319A6BF22CE158000D9B25C /* SingleTone.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E30D535E22CB8ADF00C01242 = {
 			isa = PBXGroup;
 			children = (
@@ -153,20 +190,15 @@
 		E30D536922CB8ADF00C01242 /* SuperColorPicker */ = {
 			isa = PBXGroup;
 			children = (
+				7E5530E627DFE8CC002EBE63 /* Models */,
+				7E5530E527DFE86A002EBE63 /* Extensions */,
+				7E5530E427DFE80F002EBE63 /* Views */,
+				7E5530E327DFE7D0002EBE63 /* Controllers */,
 				E30D536A22CB8ADF00C01242 /* AppDelegate.swift */,
-				E30D536C22CB8ADF00C01242 /* ViewController.swift */,
-				E319A6BF22CE158000D9B25C /* SingleTone.swift */,
-				E30D539E22CCF7DD00C01242 /* UIColorEX.swift */,
 				E30D536E22CB8ADF00C01242 /* Main.storyboard */,
-				E30D539822CB99F400C01242 /* Table.swift */,
-				E30D539A22CB9A1900C01242 /* Information.swift */,
 				E30D537122CB8AE200C01242 /* Assets.xcassets */,
 				E30D537322CB8AE200C01242 /* LaunchScreen.storyboard */,
 				E30D537622CB8AE200C01242 /* Info.plist */,
-				7E87609A27DD025600A1BECF /* ImagePick.swift */,
-				7E87609C27DE3D9200A1BECF /* paletteCell.swift */,
-				7EE6792227DE733F00DC9BBB /* colorCell.swift */,
-				7E5530DF27DF9270002EBE63 /* CopyableLabel.swift */,
 			);
 			path = SuperColorPicker;
 			sourceTree = "<group>";

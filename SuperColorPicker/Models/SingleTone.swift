@@ -17,6 +17,7 @@ class App {
     var imageColor = UIColor()
     //var paletteNames = [String]()
     
+    // для тестов и демонстрации
     var paletteNames = ["basic","pastel","dark"]
     var palettes = ["basic": ["#0088CE"],
                     "pastel": ["#D5FFCA","#CAFFDA","#FFFF9E"],
