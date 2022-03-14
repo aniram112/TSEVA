@@ -255,18 +255,18 @@ class ViewController: UIViewController,UITextFieldDelegate {
         //colorPickerDidChooseColor(colorpicker!, color: label.backgroundColor ?? .black)
         
         let alert = UIAlertController(title: "Choose palette", message: "\n\n\n\n\n\n", preferredStyle: .alert)
-        alert.isModalInPopover = true
         
         let pickerFrame = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 140))
         pickerFrame.tag = 2
         alert.view.addSubview(pickerFrame)
         pickerFrame.dataSource = self
         pickerFrame.delegate = self
-    
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
             
             App.shared.palettes[self.currPalette]?.append(color.hexString)
+            saveData()
             
         }))
         
@@ -322,9 +322,6 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
     
 }
-
-
-
 
 extension ViewController: UIPickerViewDataSource {
     
@@ -386,23 +383,24 @@ extension ViewController : ChromaColorPickerDelegate {
         
         // вот тут будет аларм
         let alert = UIAlertController(title: "Choose palette", message: "\n\n\n\n\n\n", preferredStyle: .alert)
-        alert.isModalInPopover = true
+        //alert.isModalInPopover = true
         
         let pickerFrame = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 140))
         pickerFrame.tag = 2
         alert.view.addSubview(pickerFrame)
         pickerFrame.dataSource = self
         pickerFrame.delegate = self
-    
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
             
             App.shared.palettes[self.currPalette]?.append(color.hexString)
+            saveData()
             
         }))
         
         self.present(alert,animated: true, completion: nil )
-        App.shared.data.append(color.hexString) 
+        //App.shared.data.append(color.hexString)
     }
     
 }
@@ -419,4 +417,31 @@ extension UIViewController {
     }
 }
 
+func saveData(){
+    UserDefaults.standard.set(App.shared.palettes, forKey: "palettes")
+    UserDefaults.standard.set(App.shared.paletteNames, forKey: "paletteNames")
+    UserDefaults.standard.synchronize()
+}
+
+func loadData(){
+    if let array = UserDefaults.standard.dictionary(forKey: "palettes") as? [String: [String]] {
+        App.shared.palettes = array
+    } else{
+        
+        App.shared.palettes = ["basic": ["#0088CE"],
+                               "pastel": ["#D5FFCA","#CAFFDA","#FFFF9E"],
+                               "dark": ["#007500", "#A7002C"]]
+        //App.shared.palettes = [:] для прода
+        
+    }
+    
+    if let arrayNames = UserDefaults.standard.array(forKey: "paletteNames") as? [String] {
+        App.shared.paletteNames = arrayNames
+    } else{
+        
+        App.shared.paletteNames = ["basic","pastel","dark"]
+        //App.shared.paletteNames = [String]() для прода
+        
+    }
+}
 

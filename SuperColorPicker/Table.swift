@@ -24,6 +24,7 @@ class Table: UIViewController {
                 App.shared.paletteNames.append(newPaletteName)
                 App.shared.palettes.updateValue([], forKey: newPaletteName)
                 self.tableView.reloadData()
+                saveData()
                 
             }
             // do something interesting with "answer" here
@@ -75,6 +76,7 @@ extension Table: UITableViewDelegate {
             //App.shared.data.remove(at: indexPath.row)
             App.shared.palettes.removeValue(forKey: App.shared.paletteNames[indexPath.row])
             App.shared.paletteNames.remove(at: indexPath.row)
+            saveData()
             tableView.deleteRows(at: [indexPath], with: .fade)
             /* } else if editingStyle == .insert {
              */
