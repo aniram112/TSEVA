@@ -38,27 +38,51 @@ class ViewController: UIViewController,UITextFieldDelegate {
     var textField = UITextField(frame: CGRect(x: UIScreen.main.bounds.width/2-150, y:47 , width: 300, height: 300))
     var currPalette = App.shared.paletteNames[0]
     
+    fileprivate func addLongPress() {
+        label1.isUserInteractionEnabled = true
+        label1.addGestureRecognizer(UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(addFromPalette(sender:))
+        ))
+        label2.isUserInteractionEnabled = true
+        label2.addGestureRecognizer(UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(addFromPalette(sender:))
+        ))
+        label3.isUserInteractionEnabled = true
+        label3.addGestureRecognizer(UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(addFromPalette(sender:))
+        ))
+        label4.isUserInteractionEnabled = true
+        label4.addGestureRecognizer(UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(addFromPalette(sender:))
+        ))
+        label5.isUserInteractionEnabled = true
+        label5.addGestureRecognizer(UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(addFromPalette(sender:))
+        ))
+        label6.isUserInteractionEnabled = true
+        label6.addGestureRecognizer(UILongPressGestureRecognizer(
+            target: self,
+            action: #selector(addFromPalette(sender:))
+        ))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         self.picker.dataSource = self
         self.picker.delegate = self
         picker.tag = 1
-        
-        //ImagePickerManager().pickImage(self){ image in
-        //here is the image
-        //   }
-        
-        /*
-         label1.backgroundColor = UIColor.green
-         label2.backgroundColor = UIColor.green
-         label3.backgroundColor = UIColor.green
-         */
+        addLongPress()
         
         //colorPicker собственной персоны
         let xcentre = UIScreen.main.bounds.width/2-150
         let neatColorPicker = ChromaColorPicker(frame: CGRect(x: xcentre, y: 120, width: 300, height: 300))
-        neatColorPicker.delegate = self as? ChromaColorPickerDelegate //ChromaColorPickerDelegate
+        neatColorPicker.delegate = self as ChromaColorPickerDelegate
         neatColorPicker.padding = -10
         neatColorPicker.stroke = 20
         neatColorPicker.hexLabel.textColor = UIColor.black
@@ -69,7 +93,6 @@ class ViewController: UIViewController,UITextFieldDelegate {
         let tapAction = UITapGestureRecognizer(target: self, action:#selector(actionTapped(_:)))
         colorpicker?.hexLabel.isUserInteractionEnabled = true
         colorpicker?.hexLabel.addGestureRecognizer(tapAction)
-        
         //конец colorPicker
         
         textField.textAlignment = .center
@@ -84,8 +107,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     }
     
     func ChangeColorInLabels(){
-        var strColor = colorpicker?.hexLabel.text
-        var color1 = hexStringToUIColor(hex: strColor!)
+        let strColor = colorpicker?.hexLabel.text
+        let color1 = hexStringToUIColor(hex: strColor!)
         label1.backgroundColor = color1
         textLabel1.text = colorpicker?.hexLabel.text
         label2.backgroundColor = UIColor.white
@@ -225,6 +248,32 @@ class ViewController: UIViewController,UITextFieldDelegate {
         ChangeColorInLabels()
     }
     
+    @objc func addFromPalette(sender: Any) {
+        let rec = sender as! UILongPressGestureRecognizer
+        let label = rec.view as! UILabel
+        let color = label.backgroundColor ?? .black
+        //colorPickerDidChooseColor(colorpicker!, color: label.backgroundColor ?? .black)
+        
+        let alert = UIAlertController(title: "Choose palette", message: "\n\n\n\n\n\n", preferredStyle: .alert)
+        alert.isModalInPopover = true
+        
+        let pickerFrame = UIPickerView(frame: CGRect(x: 5, y: 20, width: 250, height: 140))
+        pickerFrame.tag = 2
+        alert.view.addSubview(pickerFrame)
+        pickerFrame.dataSource = self
+        pickerFrame.delegate = self
+    
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
+            
+            App.shared.palettes[self.currPalette]?.append(color.hexString)
+            
+        }))
+        
+        self.present(alert,animated: true, completion: nil )
+        App.shared.data.append(color.hexString)
+    }
+    
     @objc func actionTapped(_ sender: UITapGestureRecognizer) {
         
         colorpicker?.hexLabel.isHidden = true
@@ -353,7 +402,6 @@ extension ViewController : ChromaColorPickerDelegate {
         }))
         
         self.present(alert,animated: true, completion: nil )
-        
         App.shared.data.append(color.hexString) 
     }
     

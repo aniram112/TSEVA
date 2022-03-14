@@ -13,15 +13,27 @@ class Table: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func addPaletteButton(_ sender: Any) {
+        var newPaletteName = "new palette"
         
-        // вот тут будем вводить новое название
+        let ac = UIAlertController(title: "Enter answer", message: nil, preferredStyle: .alert)
+        ac.addTextField()
         
-        let newPaletteName = "new palete"
-        if (App.shared.paletteNames.contains(newPaletteName)){
-            
-            App.shared.paletteNames.append(newPaletteName)
-            App.shared.palettes.updateValue([], forKey: newPaletteName)
-            self.tableView.reloadData()}
+        let submitAction = UIAlertAction(title: "Add", style: .default) { [unowned ac] _ in
+            newPaletteName = ac.textFields![0].text ?? "new palette"
+            if (!App.shared.paletteNames.contains(newPaletteName)){
+                App.shared.paletteNames.append(newPaletteName)
+                App.shared.palettes.updateValue([], forKey: newPaletteName)
+                self.tableView.reloadData()
+                
+            }
+            // do something interesting with "answer" here
+        }
+        ac.addAction(submitAction)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(ac, animated: true)
+        
+        
         
     }
     
