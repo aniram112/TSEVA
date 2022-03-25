@@ -1,8 +1,9 @@
-# TSEVA!
+# TSEVA
 color picker app with
 
 color schemes
-![Simulator Screen Shot - iPhone 11 - 2022-03-25 at 14 14 29](https://user-images.githubusercontent.com/44254111/160111399-da0230a0-685d-4f71-b7c1-10df829f6cc5.png)
+<img src="https://user-images.githubusercontent.com/44254111/160111399-da0230a0-685d-4f71-b7c1-10df829f6cc5.png" width="207" height="448">
+
 ![Simulator Screen Shot - iPhone 11 - 2022-03-25 at 14 17 13](https://user-images.githubusercontent.com/44254111/160111409-571261a4-4292-42b4-af24-3ebf77132d16.png)
 
 camera input
