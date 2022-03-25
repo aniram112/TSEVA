@@ -3,8 +3,7 @@ color picker app with
 
 color schemes
 
-<img src="https://user-images.githubusercontent.com/44254111/160111399-da0230a0-685d-4f71-b7c1-10df829f6cc5.png" width="207" height="448">
-<img src="https://user-images.githubusercontent.com/44254111/160111409-571261a4-4292-42b4-af24-3ebf77132d16.png" width="207" height="448">
+<img src="https://user-images.githubusercontent.com/44254111/160111399-da0230a0-685d-4f71-b7c1-10df829f6cc5.png" width="207" height="448"><img src="https://user-images.githubusercontent.com/44254111/160111409-571261a4-4292-42b4-af24-3ebf77132d16.png" width="207" height="448">
 
 
 camera input
