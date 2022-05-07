@@ -3,7 +3,7 @@
 //  SuperColorPicker
 //
 //  Created by Marina Roshchupkina on 13.03.2022.
-//  Copyright © 2022 Sonia Kucheryavaya. All rights reserved.
+//  Copyright © 2022 Marina Roshchupkina. All rights reserved.
 //
 
 import UIKit

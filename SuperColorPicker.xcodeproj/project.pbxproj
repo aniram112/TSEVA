@@ -11,11 +11,41 @@
 		2BC73D1050E13E61459D9685 /* Pods_SuperColorPickerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDA5D12E63BEAEB7AB199EA /* Pods_SuperColorPickerUITests.framework */; };
 		4257B71001BF7210E6F283BC /* Pods_SuperColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AEB8E977A8E79FB8358FC6 /* Pods_SuperColorPicker.framework */; };
 		7E5530E027DF9270002EBE63 /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5530DF27DF9270002EBE63 /* CopyableLabel.swift */; };
+		7E8717FA281B2C6C0005018F /* LowPolyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717F9281B2C6C0005018F /* LowPolyController.swift */; };
+		7E871809281B2CCC0005018F /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FB281B2CCB0005018F /* Grid.swift */; };
+		7E87180A281B2CCC0005018F /* Incircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FC281B2CCB0005018F /* Incircle.swift */; };
+		7E87180B281B2CCC0005018F /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FD281B2CCB0005018F /* Triangle.swift */; };
+		7E87180C281B2CCC0005018F /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FE281B2CCB0005018F /* Point.swift */; };
+		7E87180D281B2CCC0005018F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FF281B2CCB0005018F /* Image.swift */; };
+		7E87180E281B2CCC0005018F /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871800281B2CCB0005018F /* Edge.swift */; };
+		7E87180F281B2CCC0005018F /* Poisson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871802281B2CCB0005018F /* Poisson.swift */; };
+		7E871810281B2CCC0005018F /* Circumcircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871803281B2CCB0005018F /* Circumcircle.swift */; };
+		7E871811281B2CCC0005018F /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871804281B2CCB0005018F /* Hash.swift */; };
+		7E871812281B2CCC0005018F /* Delaunay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871805281B2CCB0005018F /* Delaunay.swift */; };
+		7E871813281B2CCC0005018F /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871806281B2CCB0005018F /* GridPoint.swift */; };
+		7E871814281B2CCC0005018F /* Sobel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871807281B2CCB0005018F /* Sobel.swift */; };
+		7E871824281B2E000005018F /* LowPoly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E87181B281B2E000005018F /* LowPoly.framework */; };
+		7E87182B281B2E000005018F /* LowPolyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87182A281B2E000005018F /* LowPolyTests.swift */; };
+		7E87182D281B2E000005018F /* LowPoly.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E87181D281B2E000005018F /* LowPoly.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E871830281B2E000005018F /* LowPoly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E87181B281B2E000005018F /* LowPoly.framework */; };
+		7E871831281B2E000005018F /* LowPoly.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7E87181B281B2E000005018F /* LowPoly.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E871839281B321A0005018F /* Circumcircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871803281B2CCB0005018F /* Circumcircle.swift */; };
+		7E87183A281B321A0005018F /* Delaunay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871805281B2CCB0005018F /* Delaunay.swift */; };
+		7E87183B281B321A0005018F /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871800281B2CCB0005018F /* Edge.swift */; };
+		7E87183C281B321A0005018F /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FB281B2CCB0005018F /* Grid.swift */; };
+		7E87183D281B321A0005018F /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871806281B2CCB0005018F /* GridPoint.swift */; };
+		7E87183E281B321A0005018F /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871804281B2CCB0005018F /* Hash.swift */; };
+		7E87183F281B321A0005018F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FF281B2CCB0005018F /* Image.swift */; };
+		7E871840281B321A0005018F /* Incircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FC281B2CCB0005018F /* Incircle.swift */; };
+		7E871841281B321A0005018F /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FE281B2CCB0005018F /* Point.swift */; };
+		7E871842281B321A0005018F /* Poisson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871802281B2CCB0005018F /* Poisson.swift */; };
+		7E871843281B321A0005018F /* Sobel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E871807281B2CCB0005018F /* Sobel.swift */; };
+		7E871844281B321A0005018F /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FD281B2CCB0005018F /* Triangle.swift */; };
 		7E87609B27DD025600A1BECF /* ImagePick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87609A27DD025600A1BECF /* ImagePick.swift */; };
 		7E87609D27DE3D9200A1BECF /* paletteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E87609C27DE3D9200A1BECF /* paletteCell.swift */; };
 		7EE6792327DE733F00DC9BBB /* colorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6792227DE733F00DC9BBB /* colorCell.swift */; };
 		E30D536B22CB8ADF00C01242 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D536A22CB8ADF00C01242 /* AppDelegate.swift */; };
-		E30D536D22CB8ADF00C01242 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D536C22CB8ADF00C01242 /* ViewController.swift */; };
+		E30D536D22CB8ADF00C01242 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D536C22CB8ADF00C01242 /* MainViewController.swift */; };
 		E30D537022CB8ADF00C01242 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E30D536E22CB8ADF00C01242 /* Main.storyboard */; settings = {ASSET_TAGS = (1, ); }; };
 		E30D537222CB8AE200C01242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E30D537122CB8AE200C01242 /* Assets.xcassets */; };
 		E30D537522CB8AE200C01242 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E30D537322CB8AE200C01242 /* LaunchScreen.storyboard */; };
@@ -24,10 +54,31 @@
 		E30D539922CB99F400C01242 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D539822CB99F400C01242 /* Table.swift */; };
 		E30D539B22CB9A1900C01242 /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D539A22CB9A1900C01242 /* Information.swift */; };
 		E30D539F22CCF7DD00C01242 /* UIColorEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30D539E22CCF7DD00C01242 /* UIColorEX.swift */; };
-		E319A6C022CE158000D9B25C /* SingleTone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319A6BF22CE158000D9B25C /* SingleTone.swift */; };
+		E319A6C022CE158000D9B25C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E319A6BF22CE158000D9B25C /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7E871825281B2E000005018F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E30D535F22CB8ADF00C01242 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E87181A281B2E000005018F;
+			remoteInfo = LowPoly;
+		};
+		7E871827281B2E000005018F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E30D535F22CB8ADF00C01242 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E30D536622CB8ADF00C01242;
+			remoteInfo = SuperColorPicker;
+		};
+		7E87182E281B2E000005018F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E30D535F22CB8ADF00C01242 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E87181A281B2E000005018F;
+			remoteInfo = LowPoly;
+		};
 		E30D537C22CB8AE200C01242 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E30D535F22CB8ADF00C01242 /* Project object */;
@@ -44,6 +95,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7E871835281B2E000005018F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E871831281B2E000005018F /* LowPoly.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		03B953FFB60AA216B6DC4B96 /* Pods_SuperColorPickerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperColorPickerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		409F5310148CD6FA9C51F42A /* Pods-SuperColorPickerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPickerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPickerTests/Pods-SuperColorPickerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +118,27 @@
 		615B4A074B68783BF117F8F8 /* Pods-SuperColorPickerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPickerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPickerTests/Pods-SuperColorPickerTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DDA5D12E63BEAEB7AB199EA /* Pods_SuperColorPickerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperColorPickerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5530DF27DF9270002EBE63 /* CopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
+		7E8717F9281B2C6C0005018F /* LowPolyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowPolyController.swift; sourceTree = "<group>"; };
+		7E8717FB281B2CCB0005018F /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = LowPoly/Grid.swift; sourceTree = SOURCE_ROOT; };
+		7E8717FC281B2CCB0005018F /* Incircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Incircle.swift; path = LowPoly/Incircle.swift; sourceTree = SOURCE_ROOT; };
+		7E8717FD281B2CCB0005018F /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Triangle.swift; path = LowPoly/Triangle.swift; sourceTree = SOURCE_ROOT; };
+		7E8717FE281B2CCB0005018F /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Point.swift; path = LowPoly/Point.swift; sourceTree = SOURCE_ROOT; };
+		7E8717FF281B2CCB0005018F /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = LowPoly/Image.swift; sourceTree = SOURCE_ROOT; };
+		7E871800281B2CCB0005018F /* Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = LowPoly/Edge.swift; sourceTree = SOURCE_ROOT; };
+		7E871801281B2CCB0005018F /* LowPoly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LowPoly.h; path = LowPoly/LowPoly.h; sourceTree = SOURCE_ROOT; };
+		7E871802281B2CCB0005018F /* Poisson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Poisson.swift; path = LowPoly/Poisson.swift; sourceTree = SOURCE_ROOT; };
+		7E871803281B2CCB0005018F /* Circumcircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Circumcircle.swift; path = LowPoly/Circumcircle.swift; sourceTree = SOURCE_ROOT; };
+		7E871804281B2CCB0005018F /* Hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hash.swift; path = LowPoly/Hash.swift; sourceTree = SOURCE_ROOT; };
+		7E871805281B2CCB0005018F /* Delaunay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Delaunay.swift; path = LowPoly/Delaunay.swift; sourceTree = SOURCE_ROOT; };
+		7E871806281B2CCB0005018F /* GridPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridPoint.swift; path = LowPoly/GridPoint.swift; sourceTree = SOURCE_ROOT; };
+		7E871807281B2CCB0005018F /* Sobel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sobel.swift; path = LowPoly/Sobel.swift; sourceTree = SOURCE_ROOT; };
+		7E871808281B2CCB0005018F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = LowPoly/Info.plist; sourceTree = SOURCE_ROOT; };
+		7E87181B281B2E000005018F /* LowPoly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LowPoly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E87181D281B2E000005018F /* LowPoly.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LowPoly.h; sourceTree = "<group>"; };
+		7E87181E281B2E000005018F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E871823281B2E000005018F /* LowPolyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LowPolyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E87182A281B2E000005018F /* LowPolyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowPolyTests.swift; sourceTree = "<group>"; };
+		7E87182C281B2E000005018F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E87609A27DD025600A1BECF /* ImagePick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePick.swift; sourceTree = "<group>"; };
 		7E87609C27DE3D9200A1BECF /* paletteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paletteCell.swift; sourceTree = "<group>"; };
 		7EE6792227DE733F00DC9BBB /* colorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorCell.swift; sourceTree = "<group>"; };
@@ -60,7 +146,7 @@
 		BC5B1E5393D38B1950EFB5C1 /* Pods-SuperColorPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPicker/Pods-SuperColorPicker.debug.xcconfig"; sourceTree = "<group>"; };
 		E30D536722CB8ADF00C01242 /* SuperColorPicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperColorPicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30D536A22CB8ADF00C01242 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E30D536C22CB8ADF00C01242 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E30D536C22CB8ADF00C01242 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E30D536F22CB8ADF00C01242 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E30D537122CB8AE200C01242 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E30D537422CB8AE200C01242 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -74,15 +160,31 @@
 		E30D539822CB99F400C01242 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
 		E30D539A22CB9A1900C01242 /* Information.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		E30D539E22CCF7DD00C01242 /* UIColorEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorEX.swift; sourceTree = "<group>"; };
-		E319A6BF22CE158000D9B25C /* SingleTone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTone.swift; sourceTree = "<group>"; };
+		E319A6BF22CE158000D9B25C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7E871818281B2E000005018F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E871820281B2E000005018F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E871824281B2E000005018F /* LowPoly.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E30D536422CB8ADF00C01242 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4257B71001BF7210E6F283BC /* Pods_SuperColorPicker.framework in Frameworks */,
+				7E871830281B2E000005018F /* LowPoly.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,10 +233,11 @@
 		7E5530E327DFE7D0002EBE63 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E30D536C22CB8ADF00C01242 /* ViewController.swift */,
+				E30D536C22CB8ADF00C01242 /* MainViewController.swift */,
 				E30D539822CB99F400C01242 /* Table.swift */,
 				7E87609A27DD025600A1BECF /* ImagePick.swift */,
 				E30D539A22CB9A1900C01242 /* Information.swift */,
+				7E8717F9281B2C6C0005018F /* LowPolyController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,17 +263,59 @@
 		7E5530E627DFE8CC002EBE63 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E319A6BF22CE158000D9B25C /* SingleTone.swift */,
+				E319A6BF22CE158000D9B25C /* Settings.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7E8717F8281B2C150005018F /* LowPoly */ = {
+			isa = PBXGroup;
+			children = (
+				7E871803281B2CCB0005018F /* Circumcircle.swift */,
+				7E871805281B2CCB0005018F /* Delaunay.swift */,
+				7E871800281B2CCB0005018F /* Edge.swift */,
+				7E8717FB281B2CCB0005018F /* Grid.swift */,
+				7E871806281B2CCB0005018F /* GridPoint.swift */,
+				7E871804281B2CCB0005018F /* Hash.swift */,
+				7E8717FF281B2CCB0005018F /* Image.swift */,
+				7E8717FC281B2CCB0005018F /* Incircle.swift */,
+				7E871808281B2CCB0005018F /* Info.plist */,
+				7E871801281B2CCB0005018F /* LowPoly.h */,
+				7E8717FE281B2CCB0005018F /* Point.swift */,
+				7E871802281B2CCB0005018F /* Poisson.swift */,
+				7E871807281B2CCB0005018F /* Sobel.swift */,
+				7E8717FD281B2CCB0005018F /* Triangle.swift */,
+			);
+			path = LowPoly;
+			sourceTree = "<group>";
+		};
+		7E87181C281B2E000005018F /* LowPoly */ = {
+			isa = PBXGroup;
+			children = (
+				7E87181D281B2E000005018F /* LowPoly.h */,
+				7E87181E281B2E000005018F /* Info.plist */,
+			);
+			path = LowPoly;
+			sourceTree = "<group>";
+		};
+		7E871829281B2E000005018F /* LowPolyTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E87182A281B2E000005018F /* LowPolyTests.swift */,
+				7E87182C281B2E000005018F /* Info.plist */,
+			);
+			path = LowPolyTests;
 			sourceTree = "<group>";
 		};
 		E30D535E22CB8ADF00C01242 = {
 			isa = PBXGroup;
 			children = (
+				7E8717F8281B2C150005018F /* LowPoly */,
 				E30D536922CB8ADF00C01242 /* SuperColorPicker */,
 				E30D537E22CB8AE200C01242 /* SuperColorPickerTests */,
 				E30D538922CB8AE200C01242 /* SuperColorPickerUITests */,
+				7E87181C281B2E000005018F /* LowPoly */,
+				7E871829281B2E000005018F /* LowPolyTests */,
 				E30D536822CB8ADF00C01242 /* Products */,
 				44ECB3E56D8B1FE06003173F /* Pods */,
 				0B504C38AE66323AE484D322 /* Frameworks */,
@@ -183,6 +328,8 @@
 				E30D536722CB8ADF00C01242 /* SuperColorPicker.app */,
 				E30D537B22CB8AE200C01242 /* SuperColorPickerTests.xctest */,
 				E30D538622CB8AE200C01242 /* SuperColorPickerUITests.xctest */,
+				7E87181B281B2E000005018F /* LowPoly.framework */,
+				7E871823281B2E000005018F /* LowPolyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,7 +370,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		7E871816281B2E000005018F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E87182D281B2E000005018F /* LowPoly.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		7E87181A281B2E000005018F /* LowPoly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E871832281B2E000005018F /* Build configuration list for PBXNativeTarget "LowPoly" */;
+			buildPhases = (
+				7E871816281B2E000005018F /* Headers */,
+				7E871817281B2E000005018F /* Sources */,
+				7E871818281B2E000005018F /* Frameworks */,
+				7E871819281B2E000005018F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LowPoly;
+			productName = LowPoly;
+			productReference = 7E87181B281B2E000005018F /* LowPoly.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7E871822281B2E000005018F /* LowPolyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E871836281B2E000005018F /* Build configuration list for PBXNativeTarget "LowPolyTests" */;
+			buildPhases = (
+				7E87181F281B2E000005018F /* Sources */,
+				7E871820281B2E000005018F /* Frameworks */,
+				7E871821281B2E000005018F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E871826281B2E000005018F /* PBXTargetDependency */,
+				7E871828281B2E000005018F /* PBXTargetDependency */,
+			);
+			name = LowPolyTests;
+			productName = LowPolyTests;
+			productReference = 7E871823281B2E000005018F /* LowPolyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E30D536622CB8ADF00C01242 /* SuperColorPicker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E30D538F22CB8AE200C01242 /* Build configuration list for PBXNativeTarget "SuperColorPicker" */;
@@ -233,10 +428,12 @@
 				E30D536422CB8ADF00C01242 /* Frameworks */,
 				E30D536522CB8ADF00C01242 /* Resources */,
 				C01F7BA497400F1FEBFB2FD2 /* [CP] Embed Pods Frameworks */,
+				7E871835281B2E000005018F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7E87182F281B2E000005018F /* PBXTargetDependency */,
 			);
 			name = SuperColorPicker;
 			productName = SuperColorPicker;
@@ -290,10 +487,17 @@
 				KnownAssetTags = (
 					1,
 				);
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Sonia Kucheryavaya";
 				TargetAttributes = {
+					7E87181A281B2E000005018F = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					7E871822281B2E000005018F = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = E30D536622CB8ADF00C01242;
+					};
 					E30D536622CB8ADF00C01242 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1250;
@@ -326,11 +530,27 @@
 				E30D536622CB8ADF00C01242 /* SuperColorPicker */,
 				E30D537A22CB8AE200C01242 /* SuperColorPickerTests */,
 				E30D538522CB8AE200C01242 /* SuperColorPickerUITests */,
+				7E87181A281B2E000005018F /* LowPoly */,
+				7E871822281B2E000005018F /* LowPolyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7E871819281B2E000005018F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E871821281B2E000005018F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E30D536522CB8ADF00C01242 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,20 +652,60 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7E871817281B2E000005018F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E871839281B321A0005018F /* Circumcircle.swift in Sources */,
+				7E87183A281B321A0005018F /* Delaunay.swift in Sources */,
+				7E87183B281B321A0005018F /* Edge.swift in Sources */,
+				7E87183C281B321A0005018F /* Grid.swift in Sources */,
+				7E87183D281B321A0005018F /* GridPoint.swift in Sources */,
+				7E87183E281B321A0005018F /* Hash.swift in Sources */,
+				7E87183F281B321A0005018F /* Image.swift in Sources */,
+				7E871840281B321A0005018F /* Incircle.swift in Sources */,
+				7E871841281B321A0005018F /* Point.swift in Sources */,
+				7E871842281B321A0005018F /* Poisson.swift in Sources */,
+				7E871843281B321A0005018F /* Sobel.swift in Sources */,
+				7E871844281B321A0005018F /* Triangle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E87181F281B2E000005018F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E87182B281B2E000005018F /* LowPolyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E30D536322CB8ADF00C01242 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E8717FA281B2C6C0005018F /* LowPolyController.swift in Sources */,
 				E30D539922CB99F400C01242 /* Table.swift in Sources */,
+				7E871810281B2CCC0005018F /* Circumcircle.swift in Sources */,
 				7EE6792327DE733F00DC9BBB /* colorCell.swift in Sources */,
+				7E87180A281B2CCC0005018F /* Incircle.swift in Sources */,
+				7E871811281B2CCC0005018F /* Hash.swift in Sources */,
 				7E5530E027DF9270002EBE63 /* CopyableLabel.swift in Sources */,
+				7E871814281B2CCC0005018F /* Sobel.swift in Sources */,
+				7E87180E281B2CCC0005018F /* Edge.swift in Sources */,
+				7E87180B281B2CCC0005018F /* Triangle.swift in Sources */,
 				7E87609B27DD025600A1BECF /* ImagePick.swift in Sources */,
-				E30D536D22CB8ADF00C01242 /* ViewController.swift in Sources */,
+				E30D536D22CB8ADF00C01242 /* MainViewController.swift in Sources */,
 				E30D539F22CCF7DD00C01242 /* UIColorEX.swift in Sources */,
+				7E87180D281B2CCC0005018F /* Image.swift in Sources */,
 				7E87609D27DE3D9200A1BECF /* paletteCell.swift in Sources */,
-				E319A6C022CE158000D9B25C /* SingleTone.swift in Sources */,
+				7E871813281B2CCC0005018F /* GridPoint.swift in Sources */,
+				E319A6C022CE158000D9B25C /* Settings.swift in Sources */,
+				7E871812281B2CCC0005018F /* Delaunay.swift in Sources */,
+				7E87180C281B2CCC0005018F /* Point.swift in Sources */,
 				E30D539B22CB9A1900C01242 /* Information.swift in Sources */,
 				E30D536B22CB8ADF00C01242 /* AppDelegate.swift in Sources */,
+				7E871809281B2CCC0005018F /* Grid.swift in Sources */,
+				7E87180F281B2CCC0005018F /* Poisson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +728,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7E871826281B2E000005018F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E87181A281B2E000005018F /* LowPoly */;
+			targetProxy = 7E871825281B2E000005018F /* PBXContainerItemProxy */;
+		};
+		7E871828281B2E000005018F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E30D536622CB8ADF00C01242 /* SuperColorPicker */;
+			targetProxy = 7E871827281B2E000005018F /* PBXContainerItemProxy */;
+		};
+		7E87182F281B2E000005018F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E87181A281B2E000005018F /* LowPoly */;
+			targetProxy = 7E87182E281B2E000005018F /* PBXContainerItemProxy */;
+		};
 		E30D537D22CB8AE200C01242 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E30D536622CB8ADF00C01242 /* SuperColorPicker */;
@@ -500,6 +775,108 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7E871833281B2E000005018F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6F2X87BUET;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LowPoly/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marina.LowPoly;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7E871834281B2E000005018F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6F2X87BUET;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LowPoly/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marina.LowPoly;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7E871837281B2E000005018F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6F2X87BUET;
+				INFOPLIST_FILE = LowPolyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marina.LowPolyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperColorPicker.app/SuperColorPicker";
+			};
+			name = Debug;
+		};
+		7E871838281B2E000005018F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6F2X87BUET;
+				INFOPLIST_FILE = LowPolyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = marina.LowPolyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperColorPicker.app/SuperColorPicker";
+			};
+			name = Release;
+		};
 		E30D538D22CB8AE200C01242 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -620,6 +997,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BC5B1E5393D38B1950EFB5C1 /* Pods-SuperColorPicker.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F2X87BUET;
@@ -640,6 +1018,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F56FEDC8B6C02831E3DC820 /* Pods-SuperColorPicker.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F2X87BUET;
@@ -745,6 +1124,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7E871832281B2E000005018F /* Build configuration list for PBXNativeTarget "LowPoly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E871833281B2E000005018F /* Debug */,
+				7E871834281B2E000005018F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E871836281B2E000005018F /* Build configuration list for PBXNativeTarget "LowPolyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E871837281B2E000005018F /* Debug */,
+				7E871838281B2E000005018F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E30D536222CB8ADF00C01242 /* Build configuration list for PBXProject "SuperColorPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

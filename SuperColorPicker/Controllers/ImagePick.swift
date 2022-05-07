@@ -3,13 +3,13 @@
 //  SuperColorPicker
 //
 //  Created by Marina Roshchupkina on 12.03.2022.
-//  Copyright © 2022 Sonia Kucheryavaya. All rights reserved.
+//  Copyright © 2022 Marina Roshchupkina. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ImagePick: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ImagePick: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var okButton: UIButton!
     
@@ -18,8 +18,6 @@ class ImagePick: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         imagePickerBtnAction()
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,9 +31,7 @@ class ImagePick: UIViewController, UIImagePickerControllerDelegate & UINavigatio
         performSegue(withIdentifier: "mainScreen", sender: self)
     }
     
-    func imagePickerBtnAction()
-    {
-        
+    func imagePickerBtnAction() {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.openCamera()

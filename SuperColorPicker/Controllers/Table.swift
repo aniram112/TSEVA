@@ -9,9 +9,7 @@
 import UIKit
 
 class Table: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBAction func addPaletteButton(_ sender: Any) {
         var newPaletteName = "new palette"
         
@@ -19,27 +17,22 @@ class Table: UIViewController {
         ac.addTextField()
         
         let submitAction = UIAlertAction(title: "Add", style: .default) { [unowned ac] _ in
-            newPaletteName = ac.textFields![0].text ?? "new palette"
+            newPaletteName = ac.textFields?[0].text ?? "new palette"
             if (!App.shared.paletteNames.contains(newPaletteName)){
                 App.shared.paletteNames.append(newPaletteName)
                 App.shared.palettes.updateValue([], forKey: newPaletteName)
                 self.tableView.reloadData()
                 saveData()
-                
             }
-            // do something interesting with "answer" here
         }
+        
         ac.addAction(submitAction)
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(ac, animated: true)
-        
-        
-        
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
@@ -53,6 +46,7 @@ class Table: UIViewController {
     
     
 }
+
 extension Table : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return App.shared.paletteNames.count
@@ -69,8 +63,9 @@ extension Table : UITableViewDataSource {
     }
     
 }
+
+// MARK: - UITableViewDelegate
 extension Table: UITableViewDelegate {
-    //функция для свайпа delete - хз, работает ли
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             //App.shared.data.remove(at: indexPath.row)

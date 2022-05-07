@@ -25,22 +25,23 @@ extension UIColor {
 
 func hexStringToUIColor (hex:String) -> UIColor {
     var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-    
+
     if (cString.hasPrefix("#")) {
         cString.remove(at: cString.startIndex)
     }
-    
+
     if ((cString.count) != 6) {
         return UIColor.gray
     }
-    
-    var rgbValue:UInt32 = 0
-    
-    Scanner(string: cString).scanHexInt32(&rgbValue)
+
+    var rgbValue:UInt64 = 0
+    Scanner(string: cString).scanHexInt64(&rgbValue)
+
     return UIColor(
-        r: CGFloat((rgbValue & 0xFF0000) >> 16),
-        g: CGFloat((rgbValue & 0x00FF00) >> 8),
-        b: CGFloat(rgbValue & 0x0000FF)
+        red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+        green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+        blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+        alpha: CGFloat(1.0)
     )
 }
 
@@ -57,10 +58,13 @@ extension UIColor {
     func adjust(by percentage: CGFloat = 30.0) -> UIColor? {
         var red: CGFloat = 0, green: CGFloat = 0, blue: CGFloat = 0, alpha: CGFloat = 0
         if self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) {
-            return UIColor(red: min(max(red + percentage/100,0.0), 1.0),
-                           green: min(max(green + percentage/100,0.0), 1.0),
-                           blue: min(max(blue + percentage/100,0.0), 1.0),
-                           alpha: alpha)
+            return UIColor(
+                red: min(max(red + percentage/100,0.0), 1.0),
+                green: min(max(green + percentage/100,0.0), 1.0),
+                blue: min(max(blue + percentage/100,0.0), 1.0),
+                alpha: alpha
+            )
+            
         } else {
             return nil
         }
@@ -100,7 +104,6 @@ extension UIColor {
     var tetradic2: UIColor {
         return self.withHueOffset(offset: 0.75)
     }
-    
     
     var analagous1: UIColor {
         return self.withHueOffset(offset: 1 / 12)
@@ -149,35 +152,35 @@ extension UIColor {
         return UIColor(hue: fmod(h + offset, 1), saturation: s, brightness: b, alpha: a)
     }
     
-    func withHueSaturation(satur: CGFloat) -> UIColor {
+    func withHueSaturation(satur: CGFloat, bright: CGFloat) -> UIColor {
         var h: CGFloat = 0
         var s: CGFloat = 0
         var b: CGFloat = 0
         var a: CGFloat = 0
         self.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
-        return UIColor(hue: h, saturation: s - satur/100, brightness: b, alpha: a)
+        return UIColor(hue: h, saturation: max(s - satur/100,0.0), brightness: b*bright/100, alpha: a)
     }
 }
 
 extension UIColor {
     var hexString: String {
-        let colorRef = cgColor.components
-        let r = colorRef?[0] ?? 0
-        let g = colorRef?[1] ?? 0
-        let b = ((colorRef?.count ?? 0) > 2 ? colorRef?[2] : g) ?? 0
-        let a = cgColor.alpha
-        
-        var color = String(
-            format: "#%02lX%02lX%02lX",
-            lroundf(Float(r * 255)),
-            lroundf(Float(g * 255)),
-            lroundf(Float(b * 255))
-        )
-        
-       if a < 1 {
-            color += String(format: "%02lX", lroundf(Float(a)))
+            let colorRef = cgColor.components
+            let r = colorRef?[0] ?? 0
+            let g = colorRef?[1] ?? 0
+            let b = ((colorRef?.count ?? 0) > 2 ? colorRef?[2] : g) ?? 0
+            let a = cgColor.alpha
+            
+            var color = String(
+                format: "#%02lX%02lX%02lX",
+                lroundf(Float(r * 255)),
+                lroundf(Float(g * 255)),
+                lroundf(Float(b * 255))
+            )
+            
+           if a < 1 {
+                color += String(format: "%02lX", lroundf(Float(a)))
+            }
+            
+            return color
         }
-        
-        return color
-    }
 }
