@@ -11,8 +11,8 @@ import UIKit
 
 public class Sobel: NSObject {
     
-    fileprivate let kernelX = float3x3(float3(1, 2, 1), float3(0, 0, 0), float3(-1, -2, -1))
-    fileprivate let kernelY = float3x3(float3(1, 0, -1), float3(2, 0, -2), float3(1, 0, -1))
+    fileprivate let kernelX = float3x3(SIMD3<Float>(1, 2, 1), SIMD3<Float>(0, 0, 0), SIMD3<Float>(-1, -2, -1))
+    fileprivate let kernelY = float3x3(SIMD3<Float>(1, 0, -1), SIMD3<Float>(2, 0, -2), SIMD3<Float>(1, 0, -1))
     
     public func edgeDetection(image: UIImage) -> UIImage? {
         
@@ -54,7 +54,7 @@ public class Sobel: NSObject {
                     Double(kernelX.columns.2.x) * inputImage.getGray(x: x + 1, y: y - 1) +
                     Double(kernelX.columns.2.y) * inputImage.getGray(x: x + 1, y: y) +
                     Double(kernelX.columns.2.z) * inputImage.getGray(x: x + 1, y: y + 1)
-                    )
+                )
                 let gy = (
                     Double(kernelY.columns.0.x) * inputImage.getGray(x: x - 1, y: y - 1) +
                     Double(kernelY.columns.0.y) * inputImage.getGray(x: x - 1, y: y) +
@@ -65,7 +65,7 @@ public class Sobel: NSObject {
                     Double(kernelY.columns.2.x) * inputImage.getGray(x: x + 1, y: y - 1) +
                     Double(kernelY.columns.2.y) * inputImage.getGray(x: x + 1, y: y) +
                     Double(kernelY.columns.2.z) * inputImage.getGray(x: x + 1, y: y + 1)
-                    )
+                )
                 let g = sqrt(pow(gx, 2) + pow(gy, 2))
                 
                 let bytesIndex = (inputImage.width * y + x) * 4
@@ -97,7 +97,7 @@ public class Sobel: NSObject {
                                       bytesPerRow: bytesPerRow,
                                       space: colorSpace,
                                       bitmapInfo: bitmapInfo) else {
-                                        return nil
+            return nil
         }
         
         guard let makeImage = context.makeImage() else {
@@ -105,14 +105,14 @@ public class Sobel: NSObject {
         }
         
         let result = UIImage(cgImage: makeImage)
-    
+        
         return result
     }
     
     public func points(highlightedEdgesImage: UIImage) -> [Point] {
         
         var points = [Point]()
-
+        
         guard let inputImage = Image.load(image: highlightedEdgesImage) else {
             return points
         }
@@ -158,29 +158,29 @@ public class Sobel: NSObject {
         for y in 0..<image.height {
             for x in 0..<image.width {
                 let gx = (
-                        Double(kernelX.columns.0.x) * image.getGray(x: x - 1, y: y - 1) +
-                        Double(kernelX.columns.0.y) * image.getGray(x: x - 1, y: y) +
-                        Double(kernelX.columns.0.z) * image.getGray(x: x - 1, y: y + 1) +
-                        Double(kernelX.columns.1.x) * image.getGray(x: x, y: y - 1) +
-                        Double(kernelX.columns.1.y) * image.getGray(x: x, y: y) +
-                        Double(kernelX.columns.1.z) * image.getGray(x: x, y: y + 1) +
-                        Double(kernelX.columns.2.x) * image.getGray(x: x + 1, y: y - 1) +
-                        Double(kernelX.columns.2.y) * image.getGray(x: x + 1, y: y) +
-                        Double(kernelX.columns.2.z) * image.getGray(x: x + 1, y: y + 1)
+                    Double(kernelX.columns.0.x) * image.getGray(x: x - 1, y: y - 1) +
+                    Double(kernelX.columns.0.y) * image.getGray(x: x - 1, y: y) +
+                    Double(kernelX.columns.0.z) * image.getGray(x: x - 1, y: y + 1) +
+                    Double(kernelX.columns.1.x) * image.getGray(x: x, y: y - 1) +
+                    Double(kernelX.columns.1.y) * image.getGray(x: x, y: y) +
+                    Double(kernelX.columns.1.z) * image.getGray(x: x, y: y + 1) +
+                    Double(kernelX.columns.2.x) * image.getGray(x: x + 1, y: y - 1) +
+                    Double(kernelX.columns.2.y) * image.getGray(x: x + 1, y: y) +
+                    Double(kernelX.columns.2.z) * image.getGray(x: x + 1, y: y + 1)
                 )
                 let gy = (
-                        Double(kernelY.columns.0.x) * image.getGray(x: x - 1, y: y - 1) +
-                        Double(kernelY.columns.0.y) * image.getGray(x: x - 1, y: y) +
-                        Double(kernelY.columns.0.z) * image.getGray(x: x - 1, y: y + 1) +
-                        Double(kernelY.columns.1.x) * image.getGray(x: x, y: y - 1) +
-                        Double(kernelY.columns.1.y) * image.getGray(x: x, y: y) +
-                        Double(kernelY.columns.1.z) * image.getGray(x: x, y: y + 1) +
-                        Double(kernelY.columns.2.x) * image.getGray(x: x + 1, y: y - 1) +
-                        Double(kernelY.columns.2.y) * image.getGray(x: x + 1, y: y) +
-                        Double(kernelY.columns.2.z) * image.getGray(x: x + 1, y: y + 1)
+                    Double(kernelY.columns.0.x) * image.getGray(x: x - 1, y: y - 1) +
+                    Double(kernelY.columns.0.y) * image.getGray(x: x - 1, y: y) +
+                    Double(kernelY.columns.0.z) * image.getGray(x: x - 1, y: y + 1) +
+                    Double(kernelY.columns.1.x) * image.getGray(x: x, y: y - 1) +
+                    Double(kernelY.columns.1.y) * image.getGray(x: x, y: y) +
+                    Double(kernelY.columns.1.z) * image.getGray(x: x, y: y + 1) +
+                    Double(kernelY.columns.2.x) * image.getGray(x: x + 1, y: y - 1) +
+                    Double(kernelY.columns.2.y) * image.getGray(x: x + 1, y: y) +
+                    Double(kernelY.columns.2.z) * image.getGray(x: x + 1, y: y + 1)
                 )
                 let g = sqrt(pow(gx, 2) + pow(gy, 2))
-                                
+                
                 if g > meanGrayValue {
                     points.append(Point(x: x, y: y))
                 }

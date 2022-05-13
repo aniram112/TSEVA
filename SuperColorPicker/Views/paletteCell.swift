@@ -16,6 +16,7 @@ class paletteCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDa
         super.awakeFromNib()
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.showsHorizontalScrollIndicator = false
         
         
         // Initialization code
@@ -33,21 +34,20 @@ class paletteCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDa
         
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        collectionView.reloadData()
+    }
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "colorCell", for: indexPath) as! colorCell
         
-        //cell.colorSquare.backgroundColor = .blue
-          //  = hexStringToUIColor(hex: App.shared.data[indexPath.row])
-        //cell.colorHex.text = "blue"
-            //= App.shared.data[indexPath.row]
-        
-        
-        //let colors = App.shared.palettes[paletteTitle.text!]!
-        
+        cell.colorSquare.layer.masksToBounds = true
+        cell.colorSquare.layer.cornerRadius = 10
         cell.colorSquare.backgroundColor = hexStringToUIColor(hex: App.shared.palettes[paletteTitle.text!]![indexPath.row])
         cell.colorHex.text = App.shared.palettes[paletteTitle.text!]![indexPath.row]
-        
-        //cell.colorHex.text = String(App.shared.palettes[paletteTitle.text!]!.count)
         cell.colorHex.textColor = .black
         return cell
     }

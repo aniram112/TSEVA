@@ -14,7 +14,7 @@ class App {
     
     static var shared = App()
     
-    var imageColor = UIColor()
+    var imageColor = UIColor.red
     //var paletteNames = [String]()
     
     // для тестов и демонстрации

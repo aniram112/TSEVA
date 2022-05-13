@@ -10,6 +10,9 @@
 		10F8FA0CBC96C2DD51A2CAB2 /* Pods_SuperColorPickerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B953FFB60AA216B6DC4B96 /* Pods_SuperColorPickerTests.framework */; };
 		2BC73D1050E13E61459D9685 /* Pods_SuperColorPickerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DDA5D12E63BEAEB7AB199EA /* Pods_SuperColorPickerUITests.framework */; };
 		4257B71001BF7210E6F283BC /* Pods_SuperColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AEB8E977A8E79FB8358FC6 /* Pods_SuperColorPicker.framework */; };
+		7E48350F282EE90C00A8BB0A /* UIImageEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E48350E282EE90C00A8BB0A /* UIImageEX.swift */; };
+		7E483511282EEA1200A8BB0A /* CameraMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E483510282EEA1200A8BB0A /* CameraMethods.swift */; };
+		7E483513282EEEB700A8BB0A /* DataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E483512282EEEB700A8BB0A /* DataMethods.swift */; };
 		7E5530E027DF9270002EBE63 /* CopyableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E5530DF27DF9270002EBE63 /* CopyableLabel.swift */; };
 		7E8717FA281B2C6C0005018F /* LowPolyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717F9281B2C6C0005018F /* LowPolyController.swift */; };
 		7E871809281B2CCC0005018F /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8717FB281B2CCB0005018F /* Grid.swift */; };
@@ -117,6 +120,9 @@
 		56C6B2C3235D4D72B6DA1F0C /* Pods-SuperColorPickerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPickerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPickerUITests/Pods-SuperColorPickerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		615B4A074B68783BF117F8F8 /* Pods-SuperColorPickerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperColorPickerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperColorPickerTests/Pods-SuperColorPickerTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DDA5D12E63BEAEB7AB199EA /* Pods_SuperColorPickerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperColorPickerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E48350E282EE90C00A8BB0A /* UIImageEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageEX.swift; sourceTree = "<group>"; };
+		7E483510282EEA1200A8BB0A /* CameraMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraMethods.swift; sourceTree = "<group>"; };
+		7E483512282EEEB700A8BB0A /* DataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMethods.swift; sourceTree = "<group>"; };
 		7E5530DF27DF9270002EBE63 /* CopyableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableLabel.swift; sourceTree = "<group>"; };
 		7E8717F9281B2C6C0005018F /* LowPolyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowPolyController.swift; sourceTree = "<group>"; };
 		7E8717FB281B2CCB0005018F /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = LowPoly/Grid.swift; sourceTree = SOURCE_ROOT; };
@@ -256,6 +262,9 @@
 			isa = PBXGroup;
 			children = (
 				E30D539E22CCF7DD00C01242 /* UIColorEX.swift */,
+				7E48350E282EE90C00A8BB0A /* UIImageEX.swift */,
+				7E483510282EEA1200A8BB0A /* CameraMethods.swift */,
+				7E483512282EEEB700A8BB0A /* DataMethods.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -488,7 +497,7 @@
 					1,
 				);
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Sonia Kucheryavaya";
 				TargetAttributes = {
 					7E87181A281B2E000005018F = {
@@ -683,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E48350F282EE90C00A8BB0A /* UIImageEX.swift in Sources */,
 				7E8717FA281B2C6C0005018F /* LowPolyController.swift in Sources */,
 				E30D539922CB99F400C01242 /* Table.swift in Sources */,
 				7E871810281B2CCC0005018F /* Circumcircle.swift in Sources */,
@@ -690,6 +700,7 @@
 				7E87180A281B2CCC0005018F /* Incircle.swift in Sources */,
 				7E871811281B2CCC0005018F /* Hash.swift in Sources */,
 				7E5530E027DF9270002EBE63 /* CopyableLabel.swift in Sources */,
+				7E483513282EEEB700A8BB0A /* DataMethods.swift in Sources */,
 				7E871814281B2CCC0005018F /* Sobel.swift in Sources */,
 				7E87180E281B2CCC0005018F /* Edge.swift in Sources */,
 				7E87180B281B2CCC0005018F /* Triangle.swift in Sources */,
@@ -698,6 +709,7 @@
 				E30D539F22CCF7DD00C01242 /* UIColorEX.swift in Sources */,
 				7E87180D281B2CCC0005018F /* Image.swift in Sources */,
 				7E87609D27DE3D9200A1BECF /* paletteCell.swift in Sources */,
+				7E483511282EEA1200A8BB0A /* CameraMethods.swift in Sources */,
 				7E871813281B2CCC0005018F /* GridPoint.swift in Sources */,
 				E319A6C022CE158000D9B25C /* Settings.swift in Sources */,
 				7E871812281B2CCC0005018F /* Delaunay.swift in Sources */,
@@ -903,6 +915,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -964,6 +977,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

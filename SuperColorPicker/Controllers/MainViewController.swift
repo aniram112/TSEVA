@@ -50,6 +50,8 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     // MARK: - Add actions
     private func addLongPress() {
         [label1,label2,label3,label4,label5,label6].forEach {
+            $0?.layer.masksToBounds = true
+            $0?.layer.cornerRadius = 10
             $0?.isUserInteractionEnabled = true
             $0?.addGestureRecognizer(
                 UILongPressGestureRecognizer(
@@ -59,38 +61,7 @@ class MainViewController: UIViewController,UITextFieldDelegate {
             )
         }
         
-        /*label1.isUserInteractionEnabled = true
-        label1.addGestureRecognizer(
-            UILongPressGestureRecognizer(
-                target: self,
-                action: #selector(addFromPalette)
-            )
-        )
-        label2.isUserInteractionEnabled = true
-        label2.addGestureRecognizer(UILongPressGestureRecognizer(
-            target: self,
-            action: #selector(addFromPalette(sender:))
-        ))
-        label3.isUserInteractionEnabled = true
-        label3.addGestureRecognizer(UILongPressGestureRecognizer(
-            target: self,
-            action: #selector(addFromPalette(sender:))
-        ))
-        label4.isUserInteractionEnabled = true
-        label4.addGestureRecognizer(UILongPressGestureRecognizer(
-            target: self,
-            action: #selector(addFromPalette(sender:))
-        ))
-        label5.isUserInteractionEnabled = true
-        label5.addGestureRecognizer(UILongPressGestureRecognizer(
-            target: self,
-            action: #selector(addFromPalette(sender:))
-        ))
-        label6.isUserInteractionEnabled = true
-        label6.addGestureRecognizer(UILongPressGestureRecognizer(
-            target: self,
-            action: #selector(addFromPalette(sender:))
-        ))*/
+
     }
     
     override func viewDidLoad() {
@@ -443,34 +414,6 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
-    }
-}
-
-func saveData(){
-    UserDefaults.standard.set(App.shared.palettes, forKey: "palettes")
-    UserDefaults.standard.set(App.shared.paletteNames, forKey: "paletteNames")
-    UserDefaults.standard.synchronize()
-}
-
-func loadData(){
-    if let array = UserDefaults.standard.dictionary(forKey: "palettes") as? [String: [String]] {
-        App.shared.palettes = array
-    } else{
-        
-        App.shared.palettes = ["basic": ["#0088CE"],
-                               "pastel": ["#D5FFCA","#CAFFDA","#FFFF9E"],
-                               "dark": ["#007500", "#A7002C"]]
-        //App.shared.palettes = [:] для прода
-        
-    }
-    
-    if let arrayNames = UserDefaults.standard.array(forKey: "paletteNames") as? [String] {
-        App.shared.paletteNames = arrayNames
-    } else{
-        
-        App.shared.paletteNames = ["basic","pastel","dark"]
-        //App.shared.paletteNames = [String]() для прода
-        
     }
 }
 

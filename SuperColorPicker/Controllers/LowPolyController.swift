@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import LowPoly
 
-class LowPolyController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class LowPolyController: UIViewController {
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     var sourceImage: UIImage!
@@ -41,7 +41,16 @@ class LowPolyController: UIViewController, UIImagePickerControllerDelegate & UIN
     }
     
     @IBAction func backToATapped(_ sender: Any) {
+        imageView.image?.writeToPhotoAlbum(image: imageView.image ?? UIImage())
         performSegue(withIdentifier: "mainScreen", sender: self)
+    }
+    
+    func writeToPhotoAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveCompleted), nil)
+    }
+    
+    @objc func saveCompleted(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        print("Save finished!")
     }
     
     func imagePickerBtnAction()
@@ -60,39 +69,7 @@ class LowPolyController: UIViewController, UIImagePickerControllerDelegate & UIN
         
         self.present(alert, animated: true, completion: nil)
     }
-    
-    func openCamera()
-    {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerController.SourceType.camera
-            imagePicker.allowsEditing = false
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        else
-        {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    func openGallery()
-    {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
-            let imagePicker = UIImagePickerController()
-            imagePicker.delegate = self
-            imagePicker.allowsEditing = true
-            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        else
-        {
-            let alert  = UIAlertController(title: "Warning", message: "You don't have permission to access gallery.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
+
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
@@ -184,22 +161,9 @@ class LowPolyController: UIViewController, UIImagePickerControllerDelegate & UIN
         let cgpoint = tapGestureRecognizer.location(in: tapGestureRecognizer.view)
         let color = imageView.getPixelColorAt(point: cgpoint)
         print(color)
-        okButton.backgroundColor = color
-        App.shared.imageColor = color
+        //okButton.backgroundColor = color
+        //App.shared.imageColor = color
     }
 }
 
-extension UIImage
-{
-    func aspectFittedToHeight(_ newHeight: CGFloat) -> UIImage
-    {
-        let scale = newHeight / self.size.height
-        let newWidth = self.size.width * scale
-        let newSize = CGSize(width: newWidth, height: newHeight)
-        let renderer = UIGraphicsImageRenderer(size: newSize)
 
-        return renderer.image { _ in
-            self.draw(in: CGRect(origin: .zero, size: newSize))
-        }
-    }
-}
