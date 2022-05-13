@@ -19,6 +19,7 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var label5: UILabel!
     @IBOutlet weak var label6: UILabel!
     
+    
     //labels with text
     @IBOutlet weak var textLabel1: UILabel!
     @IBOutlet weak var textLabel2: UILabel!
@@ -26,6 +27,7 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var textLabel4: UILabel!
     @IBOutlet weak var textLabel5: UILabel!
     @IBOutlet weak var textLabel6: UILabel!
+    
     
     //scrolling picker of color types
     @IBOutlet weak var picker: UIPickerView!
@@ -61,7 +63,7 @@ class MainViewController: UIViewController,UITextFieldDelegate {
             )
         }
         
-
+        
     }
     
     override func viewDidLoad() {
@@ -98,139 +100,114 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     }
     
     func ChangeColorInLabels(){
+        
+        // все кроме первого потому что он задается кругом
+        let colorLabels = [label2,label3,label4,label5,label6]
+        let textLabels = [textLabel2,textLabel3,textLabel4,textLabel5,textLabel6]
+        
         let strColor = colorpicker?.hexLabel.text
         let color1 = hexStringToUIColor(hex: strColor!)
+        
         label1.backgroundColor = color1
         textLabel1.text = colorpicker?.hexLabel.text
-        label2.backgroundColor = UIColor.white
-        label3.backgroundColor = UIColor.white
-        label4.backgroundColor = UIColor.white
-        label5.backgroundColor = UIColor.white
-        label6.backgroundColor = UIColor.white
         
-        textLabel2.text = ""
-        textLabel3.text = ""
-        textLabel4.text = ""
-        textLabel5.text = ""
-        textLabel6.text = ""
+        colorLabels.forEach(){
+            $0?.backgroundColor = .white
+        }
+        textLabels.forEach(){
+            $0?.text = ""
+        }
+        
         switch picker.selectedRow(inComponent: 0) {
-        //analogous
+            //analogous
         case 0:
-            label2.backgroundColor = color1.analagous1
-            label3.backgroundColor = color1.analagous2
-            label4.backgroundColor = color1.analagous3
-            label5.backgroundColor = color1.analagous4
-            label6.backgroundColor = color1.analagous5
-            textLabel2.text = label2.backgroundColor?.hexString
-            textLabel3.text = label3.backgroundColor?.hexString
-            textLabel4.text = label4.backgroundColor?.hexString
-            textLabel5.text = label5.backgroundColor?.hexString
-            textLabel6.text = label6.backgroundColor?.hexString
+            let analogous = [color1.analagous1, color1.analagous2, color1.analagous3, color1.analagous4, color1.analagous5]
             
-        //complementary // case 2
+            for (index,color) in colorLabels.enumerated() {
+                color?.backgroundColor = analogous[index]
+            }
+            
+            for (index,textLabel) in textLabels.enumerated() {
+                textLabel?.text = colorLabels[index]?.backgroundColor?.hexString
+            }
+            
+            //complementary
         case 1:
             label2.backgroundColor =  color1.complement
-            
             textLabel2.text = label2.backgroundColor?.hexString
             
-        //triadic
+            //triadic
         case 2:
             label2.backgroundColor = color1.triadic0
             label3.backgroundColor = color1.triadic1
-            
             textLabel2.text = label2.backgroundColor?.hexString
             textLabel3.text = label3.backgroundColor?.hexString
             
-            
-        //tetradic
+            //tetradic
         case 3:
             label2.backgroundColor = color1.tetradic0
             label3.backgroundColor = color1.tetradic1
             label4.backgroundColor = color1.tetradic2
-            
-            
             textLabel2.text = label2.backgroundColor?.hexString
             textLabel3.text = label3.backgroundColor?.hexString
             textLabel4.text = label4.backgroundColor?.hexString
             
-            
-        //neutral
+            //neutral
         case 4:
-            label2.backgroundColor = color1.neutral1
-            label3.backgroundColor = color1.neutral2
-            label4.backgroundColor = color1.neutral3
-            label5.backgroundColor = color1.neutral4
-            label6.backgroundColor = color1.neutral5
+            let neutral = [color1.neutral1, color1.neutral2, color1.neutral3, color1.neutral4, color1.neutral5]
+            for (index,color) in colorLabels.enumerated() {
+                color?.backgroundColor = neutral[index]
+            }
+            for (index,textLabel) in textLabels.enumerated() {
+                textLabel?.text = colorLabels[index]?.backgroundColor?.hexString
+            }
             
-            textLabel2.text = label2.backgroundColor?.hexString
-            textLabel3.text = label3.backgroundColor?.hexString
-            textLabel4.text = label4.backgroundColor?.hexString
-            textLabel5.text = label5.backgroundColor?.hexString
-            textLabel6.text = label6.backgroundColor?.hexString
-            
-        //shades
+            //shades
         case 5:
-            label2.backgroundColor = color1.darker(by: 12)
-            label3.backgroundColor = color1.darker(by: 24)
-            label4.backgroundColor = color1.darker(by: 36)
-            label5.backgroundColor = color1.darker(by: 48)
-            label6.backgroundColor = color1.darker(by: 60)
+            var darknessValue = 12
+            colorLabels.forEach(){
+                $0?.backgroundColor = color1.darker(by: CGFloat(darknessValue))
+                darknessValue = darknessValue + 12
+            }
             
+            for (index,textLabel) in textLabels.enumerated() {
+                textLabel?.text = colorLabels[index]?.backgroundColor?.hexString
+            }
             
-            // label7.backgroundColor = color1.darker(by: 60)
-            //label8.backgroundColor = color1.darker(by: 70)
-            
-            
-            textLabel2.text = label2.backgroundColor?.hexString
-            textLabel3.text = label3.backgroundColor?.hexString
-            textLabel4.text = label4.backgroundColor?.hexString
-            textLabel5.text = label5.backgroundColor?.hexString
-            textLabel6.text = label6.backgroundColor?.hexString
-            
-        //tints
+            //tints
         case 6:
-            label2.backgroundColor = color1.lighter(by: 12)
-            label3.backgroundColor = color1.lighter(by: 24)
-            label4.backgroundColor = color1.lighter(by: 36)
-            label5.backgroundColor = color1.lighter(by: 48)
-            label6.backgroundColor = color1.lighter(by: 60)
-            //label7.backgroundColor = color1.lighter(by: 60)
-            //label8.backgroundColor = color1.lighter(by: 70)
+            var lightnessValue = 12
+            colorLabels.forEach(){
+                $0?.backgroundColor = color1.lighter(by: CGFloat(lightnessValue))
+                lightnessValue = lightnessValue + 12
+            }
             
-            textLabel2.text = label2.backgroundColor?.hexString
-            textLabel3.text = label3.backgroundColor?.hexString
-            textLabel4.text = label4.backgroundColor?.hexString
-            textLabel5.text = label5.backgroundColor?.hexString
-            textLabel6.text = label6.backgroundColor?.hexString
+            for (index,textLabel) in textLabels.enumerated() {
+                textLabel?.text = colorLabels[index]?.backgroundColor?.hexString
+            }
             
-        //tones
+            //tones
         case 7:
-            label2.backgroundColor = color1.withHueSaturation(satur: 15, bright: 70)
-            label3.backgroundColor = color1.withHueSaturation(satur: 30, bright: 65)
-            label4.backgroundColor = color1.withHueSaturation(satur: 45, bright: 60)
-            label5.backgroundColor = color1.withHueSaturation(satur: 60, bright: 55)
-            label6.backgroundColor = color1.withHueSaturation(satur: 75, bright: 50)
-            //label7.backgroundColor = color1.withHueSaturation(satur: 55).darker(by: 40)
-            //label8.backgroundColor = color1.withHueSaturation(satur: 60).darker(by: 40)
+            var saturValue = 15
+            var brightValue = 70
             
-            textLabel2.text = label2.backgroundColor?.hexString
-            textLabel3.text = label3.backgroundColor?.hexString
-            textLabel4.text = label4.backgroundColor?.hexString
-            textLabel5.text = label5.backgroundColor?.hexString
-            textLabel6.text = label6.backgroundColor?.hexString
+            colorLabels.forEach(){
+                $0?.backgroundColor = color1.withHueSaturation(satur: CGFloat(saturValue), bright: CGFloat(brightValue))
+                saturValue = saturValue + 15
+                brightValue = brightValue - 5
+            }
+            
+            for (index,textLabel) in textLabels.enumerated() {
+                textLabel?.text = colorLabels[index]?.backgroundColor?.hexString
+            }
             
         default:
-            label2.backgroundColor = UIColor.white
-            label3.backgroundColor = UIColor.white
-            label4.backgroundColor = UIColor.white
-            label5.backgroundColor = UIColor.white
-            label6.backgroundColor = UIColor.white
-            
-            textLabel2.text = ""
-            textLabel3.text = ""
-            textLabel4.text = ""
-            textLabel5.text = ""
-            textLabel6.text = ""
+            colorLabels.forEach(){
+                $0?.backgroundColor = .white
+            }
+            textLabels.forEach(){
+                $0?.text = ""
+            }
             
         }
     }
@@ -240,7 +217,7 @@ class MainViewController: UIViewController,UITextFieldDelegate {
     }
     
     @objc func addToPalette(sender: Any) {
-        // убрать !
+        // убрать force unwrapp !
         let rec = sender as! UILongPressGestureRecognizer
         let label = rec.view as! UILabel
         let color = label.backgroundColor ?? .black
