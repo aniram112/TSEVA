@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "lowpolypack",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aniram112/LowPolyPack",
+      "state" : {
+        "branch" : "main",
+        "revision" : "fdd92bd694aba53c3e47f0bbb1a530aa332bd2b5"
+      }
+    }
+  ],
+  "version" : 2
+}
