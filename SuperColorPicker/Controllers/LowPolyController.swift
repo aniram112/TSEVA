@@ -20,6 +20,7 @@ class LowPolyController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         imagePickerBtnAction()
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
@@ -81,10 +82,10 @@ class LowPolyController: UIViewController {
         picker.dismiss(animated: true, completion: nil)
         
         // надо ресайз поумнее
-        if (sourceImage.size.height*sourceImage.size.width>640*640){
-            var scale = 640 / sourceImage.size.height
+        if (sourceImage.size.height*sourceImage.size.width>480*480){
+            var scale = 480 / sourceImage.size.height
             if (sourceImage.size.width>sourceImage.size.height){
-                scale = 640 / sourceImage.size.width
+                scale = 480 / sourceImage.size.width
             }
             
             sourceImage = sourceImage.aspectFittedToHeight(sourceImage.size.height*scale)

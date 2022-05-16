@@ -17,6 +17,7 @@ class paletteCell: UITableViewCell, UICollectionViewDelegate, UICollectionViewDa
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.backgroundColor = .white
         
         
         // Initialization code

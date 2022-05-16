@@ -15,6 +15,7 @@ class ImagePick: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         imagePickerBtnAction()
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTapped)))
